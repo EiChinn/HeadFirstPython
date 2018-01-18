@@ -1,3 +1,5 @@
+import nester
+
 man = []
 other = []
 try:
@@ -17,8 +19,8 @@ except IOError:
     print('The data file is missing!')
 try:
     with open('man_data.txt', 'w') as man_data, open('other_data.txt', 'w') as other_data:
-        print(man, file = man_data)
-        print(other, file = other_data)
+        nester.print_lol(man, fh = man_data)
+        nester.print_lol(other, fh = other_data)
 except IOError as err:
     print('File Error: ' + str(err))
 
